@@ -81,6 +81,24 @@ mainFrame.totalPlayerKills:SetText(
     "Total Kills: " .. (tao_db.kills or "0")
 )
 
+-- Money counter label
+mainFrame.totalCurrency = mainFrame:CreateFontString(
+    nil,
+    "OVERLAY",
+    "GameFontNormal"
+)
+mainFrame.totalCurrency:SetPoint(
+    "TOPLEFT",
+    mainFrame.playerName,
+    "TOPLEFT",
+    0,
+    -35
+)
+mainFrame.totalCurrency:SetText(
+    -- .. concatenates strings
+    "Total Currency Collected:"
+)
+
 -- Create the money counters
 mainFrame.totalGold = mainFrame:CreateFontString(
     nil,
@@ -89,13 +107,13 @@ mainFrame.totalGold = mainFrame:CreateFontString(
 )
 mainFrame.totalGold:SetPoint(
     "TOPLEFT",
-    mainFrame.playerName,
+    mainFrame.totalCurrency,
     "BOTTOMRIGHT",
-    0,
-    -22
+    20,
+    -5
 )
 mainFrame.totalGold:SetText(
-    "Gold: " .. (tao_db.gold or "0")
+    "|cFFFFD700 Gold: |cFFFFFFFF" .. (tao_db.gold or "0")
 )
 mainFrame.totalSilver = mainFrame:CreateFontString(
     nil,
@@ -104,13 +122,13 @@ mainFrame.totalSilver = mainFrame:CreateFontString(
 )
 mainFrame.totalSilver:SetPoint(
     "TOPLEFT",
-    mainFrame.playerName,
+    mainFrame.totalCurrency,
     "BOTTOMRIGHT",
-    0,
-    -34
+    20,
+    -17
 )
 mainFrame.totalSilver:SetText(
-    "Silver: " .. (tao_db.silver or "0")
+    "|cFFC7C7C7 Silver: |cFFFFFFFF" .. (tao_db.silver or "0")
 )
 mainFrame.totalCopper = mainFrame:CreateFontString(
     nil,
@@ -119,13 +137,13 @@ mainFrame.totalCopper = mainFrame:CreateFontString(
 )
 mainFrame.totalCopper:SetPoint(
     "TOPLEFT",
-    mainFrame.playerName,
+    mainFrame.totalCurrency,
     "BOTTOMRIGHT",
-    0,
-    -46
+    20,
+    -29
 )
 mainFrame.totalCopper:SetText(
-    "Copper: " .. (tao_db.copper or "0")
+    "|cFFD7BEA5 Copper: |cFFFFFFFF" .. (tao_db.copper or "0")
 )
 
 -- Main frame settings
@@ -147,13 +165,13 @@ mainFrame:SetScript("OnShow", function()
        "Total Kills: " .. (tao_db.kills or "0")
     )
     mainFrame.totalGold:SetText(
-        "Gold: " .. (tao_db.gold or "0")
+        "|cFFFFD700 Gold: |cFFFFFFFF" .. (tao_db.gold or "0")
     )
     mainFrame.totalSilver:SetText(
-       "Silver: " .. (tao_db.silver or "0")
+       "|cFFC7C7C7 Silver: |cFFFFFFFF" .. (tao_db.silver or "0")
     )
     mainFrame.totalCopper:SetText(
-       "Copper: " .. (tao_db.copper or "0")
+       "|cFFD7BEA5 Copper: |cFFFFFFFF" .. (tao_db.copper or "0")
     )
 end)
 mainFrame:SetScript("OnHide", function()
@@ -235,13 +253,13 @@ local function eventHandler(self, event, ...)
             "Total Kills: " .. (tao_db.kills or "0")
         )
         mainFrame.totalGold:SetText(
-            "Gold: " .. (tao_db.gold or "0")
+            "|cFFFFD700 Gold: |cFFFFFFFF" .. (tao_db.gold or "0")
         )
         mainFrame.totalSilver:SetText(
-            "Silver: " .. (tao_db.silver or "0")
+            "|cFFC7C7C7 Silver: |cFFFFFFFF" .. (tao_db.silver or "0")
         )
         mainFrame.totalCopper:SetText(
-            "Copper: " .. (tao_db.copper or "0")
+            "|cFFD7BEA5 Copper: |cFFFFFFFF" .. (tao_db.copper or "0")
         )
     end
 end

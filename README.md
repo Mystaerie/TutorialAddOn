@@ -98,7 +98,7 @@ Learning to create and edit World of Warcraft Addons by following a tutorial.  I
     - <details>
         <summary>Notes for Part 13</summary>
         <ul>
-        <li>Notes go here!</li>
+        <li>Added some colorization to the currency counters.</li>
         </ul>
     </details>
 * [Part 14: Bonus Tasks](https://www.reddit.com/r/wowaddondev/comments/1eske0r/creating_a_wow_addon_part_14_bonus_tasks/)
