@@ -194,7 +194,7 @@ local eventListenerFrame = CreateFrame(
 local function eventHandler(self, event, ...)
     local _, eventType = CombatLogGetCurrentEventInfo()
     
-    if event == "COMBAT_LOG_EVENT_UNFILTERED" then
+    if event == "COMBAT_LOG_EVENT_UNFILTERED" and tao_db.settingsKeys.enableKillTracking then
         if eventType and eventType == "PARTY_KILL" then
             if not tao_db.kills then
                 tao_db.kills = 1
@@ -202,7 +202,7 @@ local function eventHandler(self, event, ...)
                 tao_db.kills = tao_db.kills + 1
             end
         end
-    elseif event == "CHAT_MSG_MONEY" then
+    elseif event == "CHAT_MSG_MONEY" and tao_db.settingsKeys.enableCurrencyTracking then
         local msg = ... -- the chat message to be parsed
         local gold = tonumber(string.match(msg, "(%d+) Gold")) or 0
         local silver = tonumber(string.match(msg, "(%d+) Silver")) or 0

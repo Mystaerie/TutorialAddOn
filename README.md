@@ -83,7 +83,7 @@ Learning to create and edit World of Warcraft Addons by following a tutorial.  I
     - <details>
         <summary>Notes for Part 11</summary>
         <ul>
-        <li>Notes go here!</li>
+        <li>Yep, we make db.settingsKeys here.</li>
         </ul>
     </details>
 * [Part 12: Creating a Minimap Button](https://www.reddit.com/r/wowaddondev/comments/1esk1p2/creating_a_wow_addon_part_12_creating_a_minimap/)

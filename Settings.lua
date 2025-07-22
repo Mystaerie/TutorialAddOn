@@ -109,3 +109,27 @@ local function createCheckbox(checkboxText, key, checkboxTooltip)
     -- return the checkbox
     return checkbox
 end
+
+-- Event listener
+local eventListenerFrame = CreateFrame(
+    "Frame",
+    "TutorialAddOnSettingsEventListenerFrame",
+    UIParent
+)
+eventListenerFrame:RegisterEvent("PLAYER_LOGIN")
+
+eventListenerFrame:SetScript("OnEvent", function(self, event)
+    if event == "PLAYER_LOGIN" then
+        if not tao_db.settingsKeys then
+            tao_db.settingsKeys = {}
+        end
+
+        for _, setting in pairs(settings) do
+            createCheckbox(
+                setting.settingText, 
+                setting.settingKey, 
+                setting.settingTooltip
+            )
+        end
+    end
+end)
