@@ -68,7 +68,8 @@ Learning to create and edit World of Warcraft Addons by following a tutorial.  I
     - <details>
         <summary>Notes for Part 9</summary>
         <ul>
-        <li>Notes go here!</li>
+        <li>Separated the currency out into different entries, for pretty.</li>
+        <li>No issues!</li>
         </ul>
     </details>
 * [Part 10: Creating a Settings Interface](https://www.reddit.com/r/wowaddondev/comments/1esjuil/creating_a_wow_addon_part_10_creating_a_settings/)

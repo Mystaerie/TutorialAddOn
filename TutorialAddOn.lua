@@ -79,6 +79,53 @@ mainFrame.totalPlayerKills:SetText(
     "Total Kills: " .. (tao_db.kills or "0")
 )
 
+-- Create the money counters
+mainFrame.totalGold = mainFrame:CreateFontString(
+    nil,
+    "OVERLAY",
+    "GameFontNormal"
+)
+mainFrame.totalGold:SetPoint(
+    "TOPLEFT",
+    mainFrame.playerName,
+    "BOTTOMRIGHT",
+    0,
+    -22
+)
+mainFrame.totalGold:SetText(
+    "Gold: " .. (tao_db.gold or "0")
+)
+mainFrame.totalSilver = mainFrame:CreateFontString(
+    nil,
+    "OVERLAY",
+    "GameFontNormal"
+)
+mainFrame.totalSilver:SetPoint(
+    "TOPLEFT",
+    mainFrame.playerName,
+    "BOTTOMRIGHT",
+    0,
+    -34
+)
+mainFrame.totalSilver:SetText(
+    "Silver: " .. (tao_db.silver or "0")
+)
+mainFrame.totalCopper = mainFrame:CreateFontString(
+    nil,
+    "OVERLAY",
+    "GameFontNormal"
+)
+mainFrame.totalCopper:SetPoint(
+    "TOPLEFT",
+    mainFrame.playerName,
+    "BOTTOMRIGHT",
+    0,
+    -46
+)
+mainFrame.totalCopper:SetText(
+    "Copper: " .. (tao_db.copper or "0")
+)
+
 -- Main frame settings
 mainFrame:Hide()
 mainFrame:EnableMouse(true)
@@ -96,6 +143,15 @@ mainFrame:SetScript("OnShow", function()
     PlaySound(808)
     mainFrame.totalPlayerKills:SetText(
        "Total Kills: " .. (tao_db.kills or "0")
+    )
+    mainFrame.totalGold:SetText(
+        "Gold: " .. (tao_db.gold or "0")
+    )
+    mainFrame.totalSilver:SetText(
+       "Silver: " .. (tao_db.silver or "0")
+    )
+    mainFrame.totalCopper:SetText(
+       "Copper: " .. (tao_db.copper or "0")
     )
 end)
 mainFrame:SetScript("OnHide", function()
@@ -169,10 +225,22 @@ local function eventHandler(self, event, ...)
                 tao_db.gold
             )
         end
+    end
 
-        print("Gold: " .. tao_db.gold)
-        print("Silver: " .. tao_db.silver)
-        print("Copper: " .. tao_db.copper)
+    -- update the window if it is shown
+    if mainFrame:IsShown() then
+        mainFrame.totalPlayerKills:SetText(
+            "Total Kills: " .. (tao_db.kills or "0")
+        )
+        mainFrame.totalGold:SetText(
+            "Gold: " .. (tao_db.gold or "0")
+        )
+        mainFrame.totalSilver:SetText(
+            "Silver: " .. (tao_db.silver or "0")
+        )
+        mainFrame.totalCopper:SetText(
+            "Copper: " .. (tao_db.copper or "0")
+        )
     end
 end
 
