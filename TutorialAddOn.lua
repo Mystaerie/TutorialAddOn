@@ -62,6 +62,23 @@ mainFrame.playerName:SetText(
     "Character: " .. UnitName("player") .. " (Level " .. UnitLevel("player") .. ")"
 )
 
+-- Create the total player kills
+mainFrame.totalPlayerKills = mainFrame:CreateFontString(
+    nil,
+    "OVERLAY",
+    "GameFontNormal"
+)
+mainFrame.totalPlayerKills:SetPoint(
+    "TOPLEFT",
+    mainFrame.playerName,
+    "BOTTOMRIGHT",
+    0, 
+    -10
+)
+mainFrame.totalPlayerKills:SetText(
+    "Total Kills: " .. (tao_db.kills or "0")
+)
+
 -- Main frame settings
 mainFrame:Hide()
 mainFrame:EnableMouse(true)
@@ -77,6 +94,9 @@ mainFrame:SetScript("OnDragStop", function(self)
 end)
 mainFrame:SetScript("OnShow", function()
     PlaySound(808)
+    mainFrame.totalPlayerKills:SetText(
+       "Total Kills: " .. (tao_db.kills or "0")
+    )
 end)
 mainFrame:SetScript("OnHide", function()
     PlaySound(808)
@@ -112,10 +132,12 @@ local function eventHandler(self, event, ...)
     local _, eventType = CombatLogGetCurrentEventInfo()
     
     if event == "COMBAT_LOG_EVENT_UNFILTERED" then
-        if eventType then
-            print(eventType)
-        else
-            print("No data found!")
+        if eventType and eventType == "PARTY_KILL" then
+            if not tao_db.kills then
+                tao_db.kills = 1
+            else
+                tao_db.kills = tao_db.kills + 1
+            end
         end
     end
 end
