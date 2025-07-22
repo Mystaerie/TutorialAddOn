@@ -31,7 +31,8 @@ Learning to create and edit World of Warcraft Addons by following a tutorial.  I
     - <details>
         <summary>Notes for Part 4</summary>
         <ul>
-        <li>Notes go here!</li>
+        <li>'..' is used to concatinate strings.</li>
+        <li>No issues!</li>
         </ul>
     </details>
 * [Part 5: More Functions & Other Lua](https://www.reddit.com/r/wowaddondev/comments/1cc33oc/creating_a_wow_addon_part_5_more_functions_other/)
