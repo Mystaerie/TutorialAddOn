@@ -16,7 +16,7 @@ Learning to create and edit World of Warcraft Addons by following a tutorial.  I
     - <details>
         <summary>Notes for Part 2</summary>
         <ul>
-        <li>Notes go here!</li>
+        <li>No notes here, everything went well!</li>
         </ul>
     </details>
 * [Part 3: Creating a Slash Command](https://www.reddit.com/r/wowaddondev/comments/1cc2vkm/creating_a_wow_addon_part_3_creating_a_slash/)
