@@ -76,7 +76,7 @@ Learning to create and edit World of Warcraft Addons by following a tutorial.  I
     - <details>
         <summary>Notes for Part 10</summary>
         <ul>
-        <li>Notes go here!</li>
+        <li>I feel like I missed something, because we never created db.settingKeys but maybe we do that later?</li>
         </ul>
     </details>
 * [Part 11: Telling Our Addon to Create Our Checkboxes](https://www.reddit.com/r/wowaddondev/comments/1esk0xx/creating_a_wow_addon_part_11_telling_our_addon_to/)
