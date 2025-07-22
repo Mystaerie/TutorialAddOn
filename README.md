@@ -5,10 +5,12 @@ Learning to create and edit World of Warcraft Addons by following a tutorial.  I
 * [Part 1: A Fresh Start](https://www.reddit.com/r/wowaddondev/comments/1cc2pia/creating_a_wow_addon_part_1_a_fresh_start/)
     - <details>
         <summary>Notes for Part 1</summary>
-        * This tutorial was written for Classic and I'm doing this on Retail so, we'll see if that causes issues.
-        * I found the DefaultState field while digging through existing addons' toc files.  It makes it so the addon is off by default, which I'd prefer since this is a tutorial thing.
-        * Since I chose to name this "TutorialAddOn" I'll be using that name instead of "MyAddon", which is what's used in the tutorial.
-        * I feel like there's going to be a lot of UI '/reload' -ing, so I'm making a macro for it in game.
+        <ul>
+        <li>This tutorial was written for Classic and I'm doing this on Retail so, we'll see if that causes issues.</li>
+        <li>I found the DefaultState field while digging through existing addons' toc files.  It makes it so the addon is off by default, which I'd prefer since this is a tutorial thing.</li>
+        <li>Since I chose to name this "TutorialAddOn" I'll be using that name instead of "MyAddon", which is what's used in the tutorial.</li>
+        <li>I feel like there's going to be a lot of UI '/reload' -ing, so I'm making a macro for it in game.</li>
+        </ul>
     </details>
 * [Part 2: Creating a Frame](https://www.reddit.com/r/wowaddondev/comments/1cc2qgj/creating_a_wow_addon_part_2_creating_a_frame/)
 * [Part 3: Creating a Slash Command](https://www.reddit.com/r/wowaddondev/comments/1cc2vkm/creating_a_wow_addon_part_3_creating_a_slash/)
