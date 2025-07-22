@@ -46,7 +46,7 @@ Learning to create and edit World of Warcraft Addons by following a tutorial.  I
     - <details>
         <summary>Notes for Part 6</summary>
         <ul>
-        <li>Notes go here!</li>
+        <li>No issues!</li>
         </ul>
     </details>
 * [Part 7: Writing to Our Database](https://www.reddit.com/r/wowaddondev/comments/1esjh7e/creating_a_wow_addon_part_7_writing_to_our/)

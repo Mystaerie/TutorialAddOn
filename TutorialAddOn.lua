@@ -109,10 +109,16 @@ local eventListenerFrame = CreateFrame(
 )
 
 local function eventHandler(self, event, ...)
-    if event and event == "PLAYER_REGEN_ENABLED" then
-        print("Debugging: You have exited combat!")
+    local _, eventType = CombatLogGetCurrentEventInfo()
+    
+    if event == "COMBAT_LOG_EVENT_UNFILTERED" then
+        if eventType then
+            print(eventType)
+        else
+            print("No data found!")
+        end
     end
 end
 
 eventListenerFrame:SetScript("OnEvent", eventHandler)
-eventListenerFrame:RegisterEvent("PLAYER_REGEN_ENABLED")
+eventListenerFrame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
