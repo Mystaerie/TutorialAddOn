@@ -9,6 +9,8 @@ if not tao_db then
     tao_db = {}
 end
 
+TutorialAddOn = TutorialAddOn or {}
+
 -- Create the main frame
 local mainFrame = CreateFrame(
     "Frame", 
@@ -247,3 +249,11 @@ end
 eventListenerFrame:SetScript("OnEvent", eventHandler)
 eventListenerFrame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 eventListenerFrame:RegisterEvent("CHAT_MSG_MONEY")
+
+function TutorialAddOn:ToggleMainFrame()
+    if not mainFrame:IsShown() then
+        mainFrame:Show()
+    else
+        mainFrame:Hide()
+    end
+end

@@ -133,3 +133,47 @@ eventListenerFrame:SetScript("OnEvent", function(self, event)
         end
     end
 end)
+
+-- creating a minimap icon
+local addon = LibStub("AceAddon-3.0"):NewAddon("TutorialAddOn")
+
+local miniButton = LibStub("LibDataBroker-1.1"):NewDataObject("TutorialAddOn", {
+    type = "data source",
+    text = "TutorialAddOn",
+    icon = "Interface\\AddOns\\TutorialAddOn\\minimap.tga",
+    OnClick = function(self, btn)
+        if btn == "LeftButton" then
+            TutorialAddOn:ToggleMainFrame()
+        elseif btn == "RightButton" then
+            if settingsFrame:IsShown() then
+                settingsFrame:Hide()
+            else
+                settingsFrame:Show()
+            end
+        end
+    end,
+
+    OnTooltipShow = function(tooltip)
+        if not tooltip or not tooltip.AddLine then
+            return
+        end
+
+        tooltip:AddLine("TutorialAddOn\n\nLeft-click: Open TutorialAddOn\nRight-click: Open TutorialAddOn Settings", nil, nil, nil, nil)
+    end,
+})
+
+TutorialAddOnMinimapButton = LibStub("LibDBIcon-1.0")
+
+function addon:OnInitialize()
+    self.db = LibStub("AceDB-3.0"):New("TutorialAddOnMinimapPOS", {
+        profile = {
+            minimap = {
+                hide = false,
+            }
+        }
+    })
+
+    TutorialAddOnMinimapButton:Register("TutorialAddOn", miniButton, self.db.profile.minimap)
+end
+
+TutorialAddOnMinimapButton:Show("TutorialAddOn")

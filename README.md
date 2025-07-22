@@ -90,7 +90,8 @@ Learning to create and edit World of Warcraft Addons by following a tutorial.  I
     - <details>
         <summary>Notes for Part 12</summary>
         <ul>
-        <li>Notes go here!</li>
+        <li>The "download the library/image here" text in the tutorial are not links?</li>
+        <li>The LibDBIcon library could not be found using the instructions.  Had to add it's lua file to the toc explicitly.  Not sure why it wasn't working otherwise.</li>
         </ul>
     </details>
 * [Part 13: Quality of Life Changes](https://www.reddit.com/r/wowaddondev/comments/1esk34k/creating_a_wow_addon_part_13_quality_of_life/)
