@@ -39,7 +39,7 @@ Learning to create and edit World of Warcraft Addons by following a tutorial.  I
     - <details>
         <summary>Notes for Part 5</summary>
         <ul>
-        <li>Notes go here!</li>
+        <li>No issues!</li>
         </ul>
     </details>
 * [Part 6: Parsing Data](https://www.reddit.com/r/wowaddondev/comments/1esja14/creating_a_wow_addon_part_6_parsing_data/)

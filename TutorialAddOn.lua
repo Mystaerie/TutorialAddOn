@@ -100,3 +100,19 @@ table.insert(
     UISpecialFrames, 
     "TutorialAddOnMainFrame"
 )
+
+-- Create an event listener
+local eventListenerFrame = CreateFrame(
+    "Frame",
+    "TutorialAddOnEventListenerFrame",
+    UIParent
+)
+
+local function eventHandler(self, event, ...)
+    if event and event == "PLAYER_REGEN_ENABLED" then
+        print("Debugging: You have exited combat!")
+    end
+end
+
+eventListenerFrame:SetScript("OnEvent", eventHandler)
+eventListenerFrame:RegisterEvent("PLAYER_REGEN_ENABLED")
