@@ -221,6 +221,14 @@ local function eventHandler(self, event, ...)
             else
                 tao_db.kills = tao_db.kills + 1
             end
+
+            -- milestone tracking
+            if tao_db.settingsKeys.enableKillMilestones then
+                if tao_db.kills % 2 == 0 and tao_db.kills ~= 0 then
+                    print("You have tracked " .. tao_db.kills .. " kills with this addon!")
+                    print("In that time, you have collected " .. tao_db.gold .. " gold!")
+                end
+            end
         end
     elseif event == "CHAT_MSG_MONEY" and tao_db.settingsKeys.enableCurrencyTracking then
         local msg = ... -- the chat message to be parsed

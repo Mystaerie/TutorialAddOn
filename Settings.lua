@@ -4,6 +4,8 @@ variables and functions to so that other parts of the addon can access them
 ]]
 local tao, tao_namespace = ...
 
+local version = "1.0.0"
+
 local settings = {
     {
         settingText = "Enable tracking of Kills",
@@ -14,6 +16,16 @@ local settings = {
         settingText = "Enable tracking of Currency",
         settingKey = "enableCurrencyTracking",
         settingTooltip = "While enabled, your currency gained will be tracked.",
+    },
+    {
+        settingText = "Enable kill milestone tracking",
+        settingKey = "enableKillMilestones",
+        settingTooltip = "While enabled, you will receive a chat message on 250 kill intervals.",
+    },
+    {
+        settingText = "Enable loaded message",
+        settingKey = "enableLoadedMessage",
+        settingTooltip = "While enabled, you will receive a message when this addon loads.",
     },
 }
 
@@ -38,9 +50,9 @@ settingsFrame.title = settingsFrame:CreateFontString(
     "GameFontHighlight"
 )
 settingsFrame.title:SetPoint(
-    "CENTER",
+    "TOP",
     settingsFrame.TitleBg,
-    "CENTER",
+    "TOP",
     0,
     -3
 )
@@ -83,7 +95,7 @@ local function createCheckbox(checkboxText, key, checkboxTooltip)
     )
 
     -- check that the settings key for this checkbox exists
-    if not tao_db.settingsKeys[key] then
+    if tao_db.settingsKeys[key] == nil then
         tao_db.settingsKeys[key] = true
     end
 
@@ -130,6 +142,10 @@ eventListenerFrame:SetScript("OnEvent", function(self, event)
                 setting.settingKey, 
                 setting.settingTooltip
             )
+        end
+
+        if tao_db.settingsKeys.enableLoadedMessage then
+            print(tao .. " " .. version .. " Loaded!")
         end
     end
 end)

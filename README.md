@@ -1,5 +1,5 @@
 # TutorialAddOn
-Learning to create and edit World of Warcraft Addons by following a tutorial.  I'll add notes for any issues I run into.
+Learning to create and edit World of Warcraft Addons by following a tutorial.  This will be my first addon and first lua experiment.  I'll add notes for any issues I run into.
 
 ## Tutorial Links and Notes
 * [Part 1: A Fresh Start](https://www.reddit.com/r/wowaddondev/comments/1cc2pia/creating_a_wow_addon_part_1_a_fresh_start/)
@@ -105,6 +105,10 @@ Learning to create and edit World of Warcraft Addons by following a tutorial.  I
     - <details>
         <summary>Notes for Part 14</summary>
         <ul>
-        <li>Notes go here!</li>
+        <li>Completed features 1 & 2 but didn't feel like intentionally dying for 3.</li>
+        <li>Fixed a bug with the settings where they weren't saving on reloads.</li>
         </ul>
     </details>
+
+## Conclusion
+This was simple and quite fun.  Wasn't too rough for a first addon / lua tutorial.  I'm going to see if I can any more that cover additional material.
