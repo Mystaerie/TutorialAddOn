@@ -121,6 +121,13 @@ table.insert(
     "TutorialAddOnMainFrame"
 )
 
+-- Convert money
+local function moneyConverter(lower, upper)
+    upper = upper + math.floor(lower / 100)
+    lower = lower % 100
+    return lower, upper
+end
+
 -- Create an event listener
 local eventListenerFrame = CreateFrame(
     "Frame",
@@ -139,8 +146,36 @@ local function eventHandler(self, event, ...)
                 tao_db.kills = tao_db.kills + 1
             end
         end
+    elseif event == "CHAT_MSG_MONEY" then
+        local msg = ... -- the chat message to be parsed
+        local gold = tonumber(string.match(msg, "(%d+) Gold")) or 0
+        local silver = tonumber(string.match(msg, "(%d+) Silver")) or 0
+        local copper = tonumber(string.match(msg, "(%d+) Copper")) or 0
+
+        tao_db.gold = (tao_db.gold or 0) + gold
+        tao_db.silver = (tao_db.silver or 0) + silver
+        tao_db.copper = (tao_db.copper or 0) + copper
+
+        if tao_db.copper >= 100 then
+            tao_db.copper, tao_db.silver = moneyConverter(
+                tao_db.copper, 
+                tao_db.silver
+            )
+        end
+
+        if tao_db.silver >= 100 then
+            tao_db.silver, tao_db.gold = moneyConverter(
+                tao_db.silver,
+                tao_db.gold
+            )
+        end
+
+        print("Gold: " .. tao_db.gold)
+        print("Silver: " .. tao_db.silver)
+        print("Copper: " .. tao_db.copper)
     end
 end
 
 eventListenerFrame:SetScript("OnEvent", eventHandler)
 eventListenerFrame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
+eventListenerFrame:RegisterEvent("CHAT_MSG_MONEY")

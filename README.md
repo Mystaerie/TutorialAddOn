@@ -60,7 +60,8 @@ Learning to create and edit World of Warcraft Addons by following a tutorial.  I
     - <details>
         <summary>Notes for Part 8</summary>
         <ul>
-        <li>Notes go here!</li>
+        <li>Added a money converting function, for funnsies.</li>
+        <li>No issues!</li>
         </ul>
     </details>
 * [Part 9: Viewing The Fruit of Our Labors](https://www.reddit.com/r/wowaddondev/comments/1esjthf/creating_a_wow_addon_part_8_counting_currency/)
