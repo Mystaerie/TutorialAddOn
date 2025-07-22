@@ -63,3 +63,22 @@ end)
 mainFrame:SetScript("OnHide", function()
     PlaySound(808)
 end)
+
+--[[
+Create the slash command
+The name in the SlashCmdList and the SLASH_ variable MUST MATCH except the number!!!
+]]
+SLASH_TUTORIALADDON1 = "/tao"
+SlashCmdList["TUTORIALADDON"] = function()
+    if mainFrame:IsShown() then
+        mainFrame:Hide()
+    else
+        mainFrame:Show()
+    end
+end
+
+-- Make the main frame special, this means that the escape key will close the window
+table.insert(
+    UISpecialFrames, 
+    "TutorialAddOnMainFrame"
+)

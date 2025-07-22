@@ -23,7 +23,8 @@ Learning to create and edit World of Warcraft Addons by following a tutorial.  I
     - <details>
         <summary>Notes for Part 3</summary>
         <ul>
-        <li>Notes go here!</li>
+        <li>It is very important that the SLASH_name# and the SlashCmdList["name"] names match!</li>
+        <li>'Special' frames are frames that can be closed by hitting the escape key.</li>
         </ul>
     </details>
 * [Part 4: The Addon Does Stuff?](https://www.reddit.com/r/wowaddondev/comments/1cc32wv/creating_a_wow_addon_part_4_the_addon_does_stuff/)
