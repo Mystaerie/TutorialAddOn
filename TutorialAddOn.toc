@@ -1,0 +1,14 @@
+## Interface: 110107
+## Title: TutorialAddOn
+## Category-enUS: Collections
+## Notes: Learning to make a WoW Addon
+## Author: Mystaerie
+## Version: 1.0.0
+## RequiredDeps:
+## X-Curse-Project-ID: 999999
+## DefaultState: Disabled
+## SavedVariables:
+## SavedVariablesPerCharacter:
+
+# Files
+TutorialAddOn.lua
