@@ -1,6 +1,6 @@
 ## Interface: 110107
 ## Title: TutorialAddOn
-## Category-enUS: Collections
+## Category-enUS: Addon_Dev
 ## Notes: Learning to make a WoW Addon
 ## Author: Mystaerie
 ## Version: 1.0.0
